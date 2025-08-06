@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -125,10 +124,92 @@
 }
 
 @layer utilities {
+  /* Fade Animations */
   .animate-fade-in-up {
     animation: fadeInUp 1s ease-out;
   }
 
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-fade-out {
+    animation: fadeOut 0.6s ease-out;
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  /* Slide Animations */
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slide-out-right {
+    animation: slideOutRight 0.6s ease-in;
+  }
+
+  .animate-slide-out-left {
+    animation: slideOutLeft 0.6s ease-in;
+  }
+
+  /* Scale Animations */
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  .animate-scale-out {
+    animation: scaleOut 0.5s ease-in;
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.6s ease-out;
+  }
+
+  /* Bounce Animations */
+  .animate-bounce-in {
+    animation: bounceIn 0.8s ease-out;
+  }
+
+  .animate-bounce-in-down {
+    animation: bounceInDown 0.8s ease-out;
+  }
+
+  /* Flip Animations */
+  .animate-flip-in-x {
+    animation: flipInX 0.8s ease-out;
+  }
+
+  .animate-flip-in-y {
+    animation: flipInY 0.8s ease-out;
+  }
+
+  /* Rotate Animations */
+  .animate-rotate-in {
+    animation: rotateIn 0.8s ease-out;
+  }
+
+  /* Shake Animation */
+  .animate-shake {
+    animation: shake 0.6s ease-in-out;
+  }
+
+  /* Pulse Animation */
+  .animate-pulse-scale {
+    animation: pulseScale 2s ease-in-out infinite;
+  }
+
+  /* Float Animation */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Keyframes */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -139,6 +220,232 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+  }
+
+  @keyframes slideOutLeft {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scaleOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% { transform: scale(0.9); }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bounceInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    80% { transform: translateY(-10px); }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes flipInX {
+    0% {
+      opacity: 0;
+      transform: perspective(400px) rotateX(90deg);
+    }
+    40% {
+      transform: perspective(400px) rotateX(-20deg);
+    }
+    60% {
+      opacity: 1;
+      transform: perspective(400px) rotateX(10deg);
+    }
+    80% {
+      transform: perspective(400px) rotateX(-5deg);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(400px) rotateX(0deg);
+    }
+  }
+
+  @keyframes flipInY {
+    0% {
+      opacity: 0;
+      transform: perspective(400px) rotateY(90deg);
+    }
+    40% {
+      transform: perspective(400px) rotateY(-20deg);
+    }
+    60% {
+      opacity: 1;
+      transform: perspective(400px) rotateY(10deg);
+    }
+    80% {
+      transform: perspective(400px) rotateY(-5deg);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(400px) rotateY(0deg);
+    }
+  }
+
+  @keyframes rotateIn {
+    0% {
+      opacity: 0;
+      transform: rotate(-200deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+  }
+
+  @keyframes pulseScale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Animation delays */
+  .animate-delay-75 { animation-delay: 0.075s; }
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-150 { animation-delay: 0.15s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+  .animate-delay-700 { animation-delay: 0.7s; }
+  .animate-delay-1000 { animation-delay: 1s; }
+
+  /* Animation durations */
+  .animate-duration-75 { animation-duration: 0.075s; }
+  .animate-duration-100 { animation-duration: 0.1s; }
+  .animate-duration-150 { animation-duration: 0.15s; }
+  .animate-duration-200 { animation-duration: 0.2s; }
+  .animate-duration-300 { animation-duration: 0.3s; }
+  .animate-duration-500 { animation-duration: 0.5s; }
+  .animate-duration-700 { animation-duration: 0.7s; }
+  .animate-duration-1000 { animation-duration: 1s; }
+  .animate-duration-1500 { animation-duration: 1.5s; }
+  .animate-duration-2000 { animation-duration: 2s; }
+
+  /* Animation iterations */
+  .animate-once { animation-iteration-count: 1; }
+  .animate-twice { animation-iteration-count: 2; }
+  .animate-infinite { animation-iteration-count: infinite; }
 }
 
 html {
