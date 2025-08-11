@@ -4,7 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./com
 import { Input } from "./components/ui/input"
 import { Textarea } from "./components/ui/textarea"
 import { Badge } from "./components/ui/badge"
-import { Phone, Mail, MapPin, ChevronRight, Users, Target, Award, Globe, Server, Database, Shield, Zap, Star, Quote, ArrowRight, Menu, X } from 'lucide-react'
+import { Phone, Mail, MapPin, ChevronRight, Users, Target, Award, Globe, Database, Shield, Zap, Star, Quote, ArrowRight, Menu, X, Linkedin } from 'lucide-react'
+import { Instagram, Facebook} from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "services", "portfolio", "team", "testimonials", "contact"]
+      const sections = ["home", "about", "booking", "unit", "team", "testimonials", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -41,78 +42,86 @@ function App() {
     setIsMenuOpen(false)
   }
 
-  const services = [
-    {
-      icon: <Server className="h-8 w-8" />,
-      title: "IT Consulting",
-      description: "Strategic technology consulting to drive digital transformation and business growth.",
-    },
-    {
-      icon: <Globe className="h-8 w-8" />,
-      title: "Network Infrastructure",
-      description: "Robust network solutions ensuring seamless connectivity and optimal performance.",
-    },
-    {
-      icon: <Database className="h-8 w-8" />,
-      title: "Data Management",
-      description: "Comprehensive data solutions from storage to analytics and business intelligence.",
-    },
-    {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Cybersecurity",
-      description: "Advanced security solutions protecting your digital assets and infrastructure.",
-    },
-    {
-      icon: <Zap className="h-8 w-8" />,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and migration services for modern businesses.",
-    },
-    {
-      icon: <Users className="h-8 w-8" />,
-      title: "Digital Transformation",
-      description: "End-to-end digital transformation services to modernize your business operations.",
-    },
+  const units = [
+    "OBL, LEGAL & COMPLIANCE",
+    "PROJECT OPERATION",
+    "PARTNERSHIP SLA",
+    "RESOURCE & INVOICING"
   ]
 
-  const projects = [
+  const meetingRooms = [
+    "Meeting Room 1",
+    "Meeting Room 2",
+    "Meeting Room 3",
+    "Conference Room",
+  ]
+
+  const timeSlots = [
+    "08:00 - 10:00",
+    "10:00 - 12:00",
+    "13:00 - 15:00",
+    "15:00 - 17:00"
+  ]
+
+  const unitData = [
     {
-      title: "Smart City Infrastructure",
-      description:
-        "Implemented comprehensive IoT and network infrastructure for smart city initiatives across Indonesia.",
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
-      category: "Infrastructure",
+      name: "OBL, LEGAL & COMPLIANCE",
+      description: "Memastikan kepatuhan hukum dan regulasi dalam seluruh aspek operasional perusahaan dan mengelola operasional bisnis dan layanan utama perusahaan",
+      icon: <Globe className="h-12 w-12" />,
+      color: "text-blue-900"
     },
     {
-      title: "Enterprise Cloud Migration",
-      description: "Successfully migrated 500+ enterprise applications to cloud infrastructure with zero downtime.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
-      category: "Cloud Solutions",
+      name: "PROJECT OPERATION",
+      description: "Mengelola dan mengawasi pelaksanaan proyek-proyek strategis perusahaan",
+      icon: <Target className="h-12 w-12" />,
+      color: "text-green-600"
     },
     {
-      title: "National Cybersecurity Framework",
-      description: "Developed and deployed cybersecurity framework protecting critical national infrastructure.",
-      image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400&h=300&fit=crop",
-      category: "Security",
+      name: "PARTNERSHIP SLA",
+      description: "Mengelola kemitraan strategis dan Service Level Agreement dengan mitra bisnis",
+      icon: <Users className="h-12 w-12" />,
+      color: "text-purple-600"
+    },
+    {
+      name: "RESOURCE & INVOICING",
+      description: "Mengelola sumber daya perusahaan dan sistem penagihan untuk optimalisasi keuangan",
+      icon: <Database className="h-12 w-12" />,
+      color: "text-orange-600"
+    }
+  ]
+
+  const chief = [
+    {
+      nama: "TOTO RUDIARTO",
+      posisi: "KEPALA PROYEK RESOLUTION MANAGEMENT",
+      foto: "/Toto.png?w=300&h=300&fit=crop",
+      deskripsi: "20+ years experience in telecommunications and digital transformation.",
     },
   ]
 
   const team = [
     {
-      name: "Dr. Ahmad Wijaya",
-      position: "Director of PRM Division",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop",
+      name: "PAULUS CAHYO WIDHIATMOKO",
+      position: "COORDINATOR PROJECT OPERATION",
+      image: "/PAK PAULUS.png?w=300&h=300&fit=crop",
       description: "20+ years experience in telecommunications and digital transformation.",
     },
     {
-      name: "Sarah Putri",
-      position: "Head of Technology",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop",
+      name: "PRASASTA ARISANTI",
+      position: " COORDINATOR RESOURCE & INVOICING",
+      image: "/IBU PRAS.png?w=300&h=300&fit=crop",
       description: "Expert in cloud architecture and enterprise solutions with 15 years experience.",
     },
     {
-      name: "Budi Santoso",
-      position: "Head of Operations",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+      name: "ANDANG ASHARI, S.T.",
+      position: "COORDINATOR PARTNERSHIP SLA",
+      image: "/laki.jpg?w=300&h=300&fit=crop",
+      description: "Specialized in network infrastructure and project management for large-scale deployments.",
+    }, 
+    {
+      name: "FX.ALI SARTONO,ST",
+      position: "COORDINATOR OBL, LEGAL & COMPLIANCE",
+      image: "/laki.jpg?w=300&h=300&fit=crop",
       description: "Specialized in network infrastructure and project management for large-scale deployments.",
     },
   ]
@@ -148,12 +157,8 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">T</span>
-              </div>
               <div>
-                <div className="font-bold text-gray-900">PRM</div>
-                <div className="text-xs text-gray-600">Telkom Indonesia</div>
+                <img src="/LOGO PRM.png" alt="LOGO PRM" className="w-25 h-10"/>
               </div>
             </div>
 
@@ -162,8 +167,8 @@ function App() {
               {[
                 { id: "home", label: "Home" },
                 { id: "about", label: "About" },
-                { id: "services", label: "Services" },
-                { id: "portfolio", label: "Portfolio" },
+                { id: "booking", label: "Booking" },
+                { id: "unit", label: "Unit" },
                 { id: "team", label: "Team" },
                 { id: "testimonials", label: "Testimonials" },
                 { id: "contact", label: "Contact" },
@@ -171,8 +176,8 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors hover:text-red-600 ${
-                    activeSection === item.id ? "text-red-600" : "text-gray-700"
+                  className={`text-sm font-medium transition-colors hover:text-blue-900 ${
+                    activeSection === item.id ? "text-blue-900" : "text-gray-700"
                   }`}
                 >
                   {item.label}
@@ -182,7 +187,7 @@ function App() {
 
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-red-600">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-blue-900">
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
@@ -195,8 +200,8 @@ function App() {
                 {[
                   { id: "home", label: "Home" },
                   { id: "about", label: "About" },
-                  { id: "services", label: "Services" },
-                  { id: "portfolio", label: "Portfolio" },
+                  { id: "booking", label: "Booking" },
+                  { id: "unit", label: "Unit" },
                   { id: "team", label: "Team" },
                   { id: "testimonials", label: "Testimonials" },
                   { id: "contact", label: "Contact" },
@@ -204,8 +209,8 @@ function App() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-left text-sm font-medium transition-colors hover:text-red-600 ${
-                      activeSection === item.id ? "text-red-600" : "text-gray-700"
+                    className={`text-left text-sm font-medium transition-colors hover:text-blue-900 ${
+                      activeSection === item.id ? "text-blue-900" : "text-gray-700"
                     }`}
                   >
                     {item.label}
@@ -219,7 +224,7 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-700 to-blue-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-900 to-blue-600"></div>
         <div className="absolute inset-0 bg-black/20"></div>
 
         {/* Animated background elements */}
@@ -232,7 +237,7 @@ function App() {
           <div className="animate-fade-in-up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               PRM
-              <span className="block text-2xl md:text-3xl lg:text-4xl font-normal mt-2 text-red-200">
+              <span className="block text-2xl md:text-3xl lg:text-4xl font-normal mt-2 text-blue-100">
                 Empowering Digital Future with Telkom
               </span>
             </h1>
@@ -243,7 +248,7 @@ function App() {
             <Button
               onClick={() => scrollToSection("about")}
               size="lg"
-              className="bg-white text-red-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
             >
               Pelajari Lebih Lanjut
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -271,7 +276,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
               <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <Target className="h-12 w-12 text-red-600 mb-4" />
+                <Target className="h-12 w-12 text-blue-900 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Visi Kami</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Menjadi pemimpin dalam transformasi digital Indonesia dengan menyediakan solusi teknologi terdepan
@@ -292,99 +297,271 @@ function App() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6">
-                <Users className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Profesionalisme</h3>
-                <p className="text-gray-600">
-                  Tim ahli dengan pengalaman puluhan tahun di industri teknologi dan telekomunikasi.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="bg-white p-8 rounded-2xl shadow-lg">
 
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6">
-                <Zap className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Inovasi</h3>
-                <p className="text-gray-600">
-                  Mengadopsi teknologi terdepan untuk memberikan solusi yang efektif dan efisien.
-                </p>
-              </CardContent>
-            </Card>
+            {/* ISTIGHFAR Image */}
+            <div className="flex justify-center mb-8">
+              <img
+                src="/Logo Istighfar.png?"
+                alt="ISTIGHFAR Framework"
+                className="h-30"
+              />
+            </div>
 
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6">
-                <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Keandalan</h3>
-                <p className="text-gray-600">Komitmen tinggi terhadap kualitas layanan dan kepuasan pelanggan.</p>
-              </CardContent>
-            </Card>
+            {/* ISTIGHFAR Explanation */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="border-l-4 border-red-600 pl-4">
+                <h4 className="font-semibold text-gray-900 mb-2">I - Integrated</h4>
+                <p className="text-sm">Integrated administration of the CFMS population to ensure seamless business process execution</p>
+              </div>
+
+              <div className="border-l-4 border-blue-600 pl-4">
+                <h4 className="font-semibold text-gray-900 mb-2">STI - Systems TIC</h4>
+                <p className="text-sm">Systems TIC administration and payment of the CFMS population that aligns with established policies and guidelines</p>
+              </div>
+
+              <div className="border-l-4 border-purple-600 pl-4">
+                <h4 className="font-semibold text-gray-900 mb-2">G - Governance</h4>
+                <p className="text-sm">Governance as the core principle to ensure compliance with regulations and uphold ethical business practices</p>
+              </div>
+
+              <div className="border-l-4 border-teal-600 pl-4">
+                <h4 className="font-semibold text-gray-900 mb-2">HF - Healthy Profit</h4>
+                <p className="text-sm">Healthy profit as the foundation to achieve a win-win solution between Telkom and the partners</p>
+              </div>
+
+              <div className="border-l-4 border-cyan-600 pl-4">
+                <h4 className="font-semibold text-gray-900 mb-2">AR - Accounting Realistic</h4>
+                <p className="text-sm">Accounting Realistic to guarantee adherence to current financial policies</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
+      {/* Booking Meeting Room Section */}
+      <section id="booking" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Layanan Kami</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Booking Meeting Room</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Solusi teknologi komprehensif untuk mendukung transformasi digital perusahaan Anda.
+              Reservasi ruang meeting untuk kebutuhan rapat dan diskusi tim Anda.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="text-red-600 group-hover:text-blue-600 transition-colors duration-300">
-                    {service.icon}
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-8">
+              <CardHeader>
+                <CardTitle className="text-2xl mb-6">Form Booking Meeting Room</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Unit</label>
+                      <select className="w-full px-3 py-2 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring">
+                        <option value="" className="text-xs sm:text-sm">Pilih Unit</option>
+                        {units.map((unit, index) => (
+                          <option key={index} value={unit} className="text-xs sm:text-sm">{unit}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Nama Ruangan</label>
+                      <select className="w-full px-3 py-2 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring">
+                        <option value="" className="text-xs sm:text-sm">Pilih Ruangan</option>
+                        {meetingRooms.map((room, index) => (
+                          <option key={index} value={room} className="text-xs sm:text-sm">{room}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">{service.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Portofolio Proyek</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Showcase proyek-proyek terbaik yang telah kami kerjakan untuk berbagai klien enterprise.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="secondary" className="bg-white/90 text-gray-900">
-                      {project.category}
-                    </Badge>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Topic Meeting</label>
+                    <Input placeholder="Masukkan topik meeting" />
                   </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Tanggal Meeting</label>
+                      <Input type="date" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Waktu (2 Jam)</label>
+                      <select className="w-full px-3 py-2 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring">
+                        <option value="" className="text-xs sm:text-sm">Pilih Waktu</option>
+                        {timeSlots.map((slot, index) => (
+                          <option key={index} value={slot} className="text-xs sm:text-sm">{slot}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <Button className="w-full bg-blue-900 hover:bg-blue-800 text-white">
+                    Submit Booking
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Booking Status Examples */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Status Booking Terbaru</h3>
+                <div className="grid md:grid-cols-2 gap-3">
+                  <Card className="p-8">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold">Meeting Room 1</h4>
+                        <Badge className="bg-yellow-100 text-yellow-800">Pending</Badge>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">OBL, LEGAL & COMPLIANCE</p>
+                      <p className="text-sm text-gray-600 mb-2">Project Review</p>
+                      <p className="text-sm text-gray-500">25 Des 2025, 09:00-11:00</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="p-8">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold">Meeting Room 2</h4>
+                        <Badge className="bg-green-100 text-green-800">Approved</Badge>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">Partnership SLA</p>
+                      <p className="text-sm text-gray-600 mb-2">Compliance Meeting</p>
+                      <p className="text-sm text-gray-500">26 Des 2025, 08:00-10:00</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="p-8">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold">Meeting Room 3</h4>
+                        <Badge className="bg-red-100 text-red-800">Rejected</Badge>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">PROJECT OPERATION</p>
+                      <p className="text-sm text-gray-600 mb-2">Planning</p>
+                      <p className="text-sm text-gray-500">27 Des 2025, 10:00-12:00</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="p-8">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold">Conference Room</h4>
+                        <Badge className="bg-green-100 text-green-800">Approved</Badge>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">PROJECT OPERATION</p>
+                      <p className="text-sm text-gray-600 mb-2">Finishing</p>
+                      <p className="text-sm text-gray-500">31 Des 2025, 10:00-12:00</p>
+                    </CardContent>
+                  </Card>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unit Section */}
+      <section id="unit" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Unit Organisasi</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Struktur organisasi PRM yang terdiri dari berbagai unit spesialisasi untuk mendukung operasional perusahaan.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {unitData.map((unit, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardHeader className="text-center">
+                  <div className={`${unit.color} group-hover:scale-110 transition-transform duration-300 flex justify-center mb-4`}>
+                    {unit.icon}
+                  </div>
+                  <CardTitle className="text-xl">{unit.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">{project.description}</CardDescription>
+                  <CardDescription className="text-gray-600 leading-relaxed text-center">
+                    {unit.description}
+                  </CardDescription>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Calendar of Events */}
+          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Calendar of Events</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-red-100 text-red-600 rounded-lg p-2 mr-3">
+                      <div className="text-xs font-semibold">AUG</div>
+                      <div className="text-lg font-bold">17</div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Upacara Hari Kemerdekaan</h4>
+                      <p className="text-sm text-gray-500">07:00 - 11:00 WIB</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Upacara Bendera Memperingati Hari Kemerdakaan Indonesia untuk semua unit PRM.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge variant="outline" className="text-xs">All Units</Badge>
+                    <span className="text-xs text-gray-500">Halaman Telkom Indibiz</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 text-blue-600 rounded-lg p-2 mr-3">
+                      <div className="text-xs font-semibold">AUG</div>
+                      <div className="text-lg font-bold">18</div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Cuti Bersama Nasional</h4>
+                      <p className="text-sm text-gray-500">08:00 - 17:00 WIB</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Cuti Bersama Hari Kemerdekaan Republik Indonesia
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge variant="outline" className="text-xs">All Units</Badge>
+                    <span className="text-xs text-gray-500">-</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-green-100 text-green-600 rounded-lg p-2 mr-3">
+                      <div className="text-xs font-semibold">AUG</div>
+                      <div className="text-lg font-bold">20</div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Lomba HUT RI 80</h4>
+                      <p className="text-sm text-gray-500">08:00 - 16:00 WIB</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Lomba Antar Unit PRM
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge variant="outline" className="text-xs">All Units</Badge>
+                    <span className="text-xs text-gray-500">Halaman Telkom Indibiz</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+            </div>
           </div>
         </div>
       </section>
@@ -399,7 +576,25 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid mb-8">
+            {chief.map((member, index) => (
+              <Card key={index} className="text-center group hover:shadow-xl transition-all duration-300 w-full">
+                <CardContent className="pt-6">
+                  <div className="relative mb-6">
+                    <img
+                      src={member.foto || "/placeholder.svg"}
+                      alt={member.nama}
+                      className="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{member.nama}</h3>
+                  <p className="text-blue-900 font-medium mb-3">{member.posisi}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="text-center group hover:shadow-xl transition-all duration-300">
                 <CardContent className="pt-6">
@@ -411,8 +606,7 @@ function App() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="text-red-600 font-medium mb-3">{member.position}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
+                  <p className="text-blue-900 font-medium mb-3">{member.position}</p>
                 </CardContent>
               </Card>
             ))}
@@ -434,7 +628,7 @@ function App() {
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="relative p-6 hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="pt-6">
-                  <Quote className="h-8 w-8 text-red-600 mb-4" />
+                  <Quote className="h-8 w-8 text-blue-900 mb-4" />
                   <p className="text-gray-600 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -488,7 +682,7 @@ function App() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">Pesan</label>
                       <Textarea placeholder="Ceritakan tentang kebutuhan teknologi perusahaan Anda..." rows={5} />
                     </div>
-                    <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                    <Button className="w-full bg-blue-900 hover:bg-blue-800 text-white">
                       Kirim Pesan
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -501,15 +695,15 @@ function App() {
               <Card className="p-6">
                 <CardContent className="pt-6">
                   <div className="flex items-start space-x-4">
-                    <MapPin className="h-6 w-6 text-red-600 mt-1" />
+                    <MapPin className="h-6 w-6 text-blue-900 mt-1" />
                     <div>
                       <h3 className="font-bold text-gray-900 mb-2">Alamat Kantor</h3>
                       <p className="text-gray-600">
-                        Telkom Indonesia
+                        Telkom Indibiz Experience - Jakarta Pusat
                         <br />
-                        Jl. Japati No. 1, Bandung
+                        Jl. Kebon Sirih No.36, Gambir, Kecamatan Gambir
                         <br />
-                        Jawa Barat 40133, Indonesia
+                        Kota Jakarta Pusat Daerah Khusus Ibukota Jakarta 10340
                       </p>
                     </div>
                   </div>
@@ -519,7 +713,7 @@ function App() {
               <Card className="p-6">
                 <CardContent className="pt-6">
                   <div className="flex items-start space-x-4">
-                    <Phone className="h-6 w-6 text-red-600 mt-1" />
+                    <Phone className="h-6 w-6 text-blue-900 mt-1" />
                     <div>
                       <h3 className="font-bold text-gray-900 mb-2">Telepon</h3>
                       <p className="text-gray-600">+62 22 7566 5000</p>
@@ -531,7 +725,7 @@ function App() {
               <Card className="p-6">
                 <CardContent className="pt-6">
                   <div className="flex items-start space-x-4">
-                    <Mail className="h-6 w-6 text-red-600 mt-1" />
+                    <Mail className="h-6 w-6 text-blue-900 mt-1" />
                     <div>
                       <h3 className="font-bold text-gray-900 mb-2">Email</h3>
                       <p className="text-gray-600">prm@telkom.co.id</p>
@@ -544,8 +738,16 @@ function App() {
               <Card className="p-6">
                 <CardContent className="pt-6">
                   <h3 className="font-bold text-gray-900 mb-4">Lokasi Kami</h3>
-                  <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <p className="text-gray-500">Google Maps Embed</p>
+                  <div className="w-full h-64 rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.610160646332!2d106.8241632750374!3d-6.1828991938046025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x65cfeea36bcefb5%3A0x5163245d7deb4a95!2sTelkom%20Indibiz%20Experience%20-%20Jakarta%20Pusat!5e0!3m2!1sid!2sid!4v1754624345676!5m2!1sid!2sid"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
                 </CardContent>
               </Card>
@@ -560,55 +762,47 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">T</span>
-                </div>
-                <div>
-                  <div className="font-bold text-xl">PRM</div>
-                  <div className="text-sm text-gray-400">Telkom Indonesia</div>
-                </div>
+                  <img src="/LOGO PRM WHITE.png" alt="LOGO PRM" className="w-25 h-10"/>
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
                 Divisi strategis Telkom Indonesia yang berfokus pada transformasi digital dan solusi teknologi
                 enterprise untuk memajukan Indonesia.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <span className="sr-only">LinkedIn</span>
-                  <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                    <span className="text-xs">in</span>
-                  </div>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <span className="sr-only">Twitter</span>
-                  <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                    <span className="text-xs">tw</span>
-                  </div>
+              <div className="flex space-x-4 text-xl items-center mb-2">
+                <a
+                  href="https://www.instagram.com/prmtelkom?igsh=YXVkdWhleTRobmp5"
+                  className="flex items-center gap-x-2 hover:text-pink-500 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="w-6 h-6" />
+                  <span className="text-base font-medium">Instagram</span>
                 </a>
               </div>
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-4">Layanan</h3>
+              <h3 className="font-bold text-lg mb-4">Unit</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    IT Consulting
+                  <a href="/unit" className="hover:text-white transition-colors">
+                    OBL, LEGAL & COMPLIANCE
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Network Infrastructure
+                  <a href="/unit" className="hover:text-white transition-colors">
+                    PROJECT OPERATION
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Data Management
+                  <a href="/unit" className="hover:text-white transition-colors">
+                    PARTNERSHIP SLA
+
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Cybersecurity
+                  <a href="/unit" className="hover:text-white transition-colors">
+                    RESOURCE & INVOICING
                   </a>
                 </li>
               </ul>
@@ -618,22 +812,22 @@ function App() {
               <h3 className="font-bold text-lg mb-4">Perusahaan</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="/about" className="hover:text-white transition-colors">
                     Tentang Kami
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Karir
+                  <a href="/booking" className="hover:text-white transition-colors">
+                    Booking Meeting Room
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Berita
+                  <a href="/unit" className="hover:text-white transition-colors">
+                    Unit
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="/contact" className="hover:text-white transition-colors">
                     Kontak
                   </a>
                 </li>
