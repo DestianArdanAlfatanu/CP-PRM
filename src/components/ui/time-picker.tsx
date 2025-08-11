@@ -85,9 +85,6 @@ const TimePicker: React.FC<TimePickerProps> = ({ label, value, onChange }) => {
     setIsOpen(!isOpen)
   }
 
-  const handleClose = () => {
-    setIsOpen(false)
-  }
 
   return (
     <div className="relative w-full" ref={containerRef}>
