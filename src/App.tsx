@@ -4,8 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./com
 import { Input } from "./components/ui/input"
 import { Textarea } from "./components/ui/textarea"
 import { Badge } from "./components/ui/badge"
-import { Phone, Mail, MapPin, ChevronRight, Users, Target, Award, Globe, Database, Shield, Zap, Star, Quote, ArrowRight, Menu, X, Linkedin } from 'lucide-react'
-import { Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronRight, Users, Target, Award, Globe, Database, Star, Quote, ArrowRight, Menu, X, Instagram } from 'lucide-react'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
