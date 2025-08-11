@@ -4,11 +4,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./com
 import { Input } from "./components/ui/input"
 import { Textarea } from "./components/ui/textarea"
 import { Badge } from "./components/ui/badge"
-import { Phone, Mail, MapPin, ChevronRight, Users, Target, Award, Globe, Database, Star, Quote, ArrowRight, Menu, X, Instagram } from 'lucide-react'
+import { Phone, Mail, MapPin, ChevronRight, Users, Target, Award, Globe, Database, Star, Quote, ArrowRight, Menu, X, Instagram, Clock } from 'lucide-react'
+import TimePicker from "./components/ui/time-picker"
+
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+  const [startTime, setStartTime] = useState("09:00")
+  const [endTime, setEndTime] = useState("11:00")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -148,6 +152,28 @@ function App() {
       rating: 5,
     },
   ]
+
+    // Calculate meeting duration
+  const calculateDuration = (start: string, end: string) => {
+    const [startHour, startMinute] = start.split(":").map(Number)
+    const [endHour, endMinute] = end.split(":").map(Number)
+
+    const startTotalMinutes = startHour * 60 + startMinute
+    const endTotalMinutes = endHour * 60 + endMinute
+
+    const durationMinutes = endTotalMinutes - startTotalMinutes
+    const hours = Math.floor(durationMinutes / 60)
+    const minutes = durationMinutes % 60
+
+    if (hours > 0 && minutes > 0) {
+      return `${hours} jam ${minutes} menit`
+    } else if (hours > 0) {
+      return `${hours} jam`
+    } else {
+      return `${minutes} menit`
+    }
+  }
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -384,16 +410,22 @@ function App() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Tanggal Meeting</label>
-                      <Input type="date" />
+                      <Input type="date" className="transition-all duration-300 focus:scale-[1.02]" />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Waktu (2 Jam)</label>
-                      <select className="w-full px-3 py-2 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring">
-                        <option value="" className="text-xs sm:text-sm">Pilih Waktu</option>
-                        {timeSlots.map((slot, index) => (
-                          <option key={index} value={slot} className="text-xs sm:text-sm">{slot}</option>
-                        ))}
-                      </select>
+
+                    {/* Time Selection */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <TimePicker label="Waktu Mulai" value={startTime} onChange={setStartTime} />
+                      <TimePicker label="Waktu Selesai" value={endTime} onChange={setEndTime} />
+                    </div>
+
+                    {/* Duration Display */}
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                      <div className="flex items-center space-x-2 text-sm text-gray-600">
+                        <Clock className="h-4 w-4" />
+                        <span>Durasi meeting: </span>
+                        <span className="font-semibold text-blue-600">{calculateDuration(startTime, endTime)}</span>
+                      </div>
                     </div>
                   </div>
 
