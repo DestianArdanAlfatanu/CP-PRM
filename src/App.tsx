@@ -5,7 +5,7 @@ import { Input } from "./components/ui/input"
 import { Textarea } from "./components/ui/textarea"
 import { Badge } from "./components/ui/badge"
 import { Phone, Mail, MapPin, ChevronRight, Users, Target, Award, Globe, Database, Shield, Zap, Star, Quote, ArrowRight, Menu, X, Linkedin } from 'lucide-react'
-import { Instagram} from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -768,7 +768,7 @@ function App() {
                 Divisi strategis Telkom Indonesia yang berfokus pada transformasi digital dan solusi teknologi
                 enterprise untuk memajukan Indonesia.
               </p>
-              <div className="flex space-x-4 text-xl items-center mb-2">
+              <div className="flex space-x-4 text-xl items-center">
                 <a
                   href="https://www.instagram.com/prmtelkom?igsh=YXVkdWhleTRobmp5"
                   className="flex items-center gap-x-2 hover:text-pink-500 transition-colors"
