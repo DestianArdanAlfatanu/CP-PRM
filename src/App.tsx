@@ -548,7 +548,7 @@ function App() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Lomba HUT RI 80</h4>
-                      <p className="text-sm text-gray-500">08:30 - 16:00 WIB</p>
+                      <p className="text-sm text-gray-500">09:00 - 16:00 WIB</p>
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 mb-3">
