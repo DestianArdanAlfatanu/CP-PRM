@@ -11,8 +11,8 @@ import TimePicker from "./components/ui/time-picker"
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const [startTime, setStartTime] = useState("09:00")
-  const [endTime, setEndTime] = useState("11:00")
+  const [startTime, setStartTime] = useState("08:00")
+  const [endTime, setEndTime] = useState("12:00")
 
   useEffect(() => {
     const handleScroll = () => {
